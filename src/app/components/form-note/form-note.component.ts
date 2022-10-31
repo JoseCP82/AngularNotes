@@ -34,8 +34,6 @@ export class FormNoteComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.note && this.note.title){
-      console.log("RECIBO")
-      console.log(this.note)
       this.form.setValue(this.note);
 
       /*this.form.patchValue({

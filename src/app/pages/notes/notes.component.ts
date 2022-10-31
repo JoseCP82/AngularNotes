@@ -35,6 +35,7 @@ export class NotesComponent implements OnInit {
     return item.id;
   }
   updateNote($event:any){
+    console.log($event);
     this.notesS.updateNote($event);  //<-new
     document.getElementById("closeModal")?.click();
   }
