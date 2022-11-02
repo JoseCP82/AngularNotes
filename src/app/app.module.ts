@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotesService } from './services/notes.service';
-import { SocialLoginModule, SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
+import { SocialAuthServiceConfig} from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
@@ -20,7 +20,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserModule,
     AppRoutingModule,
     NavbarComponent,
-    SocialLoginModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -36,7 +35,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: false,
+        autoLogin: true,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,

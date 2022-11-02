@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -10,6 +11,7 @@ export class LoginService {
   user!: SocialUser;
   loggedIn!: boolean;
   originalPath!: string;
+
   constructor(private authService: SocialAuthService, private router: Router) {
     this.authService.authState.subscribe((user) => {
       this.user = user;

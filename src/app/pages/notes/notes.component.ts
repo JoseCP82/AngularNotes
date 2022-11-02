@@ -6,11 +6,12 @@ import { NotesService } from '../../services/notes.service';
 import { SharedModule } from 'src/app/components/SharedModule';
 import { HighlightDirective } from 'src/app/directives/highlight.directive';
 import { FormNoteComponent } from 'src/app/components/form-note/form-note.component';
+import { HeadListComponent } from 'src/app/components/head-list/head-list.component';
 
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [CommonModule,FormsModule,SharedModule,HighlightDirective,FormNoteComponent],
+  imports: [CommonModule,FormsModule,SharedModule,HighlightDirective,FormNoteComponent, HeadListComponent],
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css'],
 })

@@ -1,22 +1,17 @@
 import { Injectable } from '@angular/core';
 import { INote } from '../model/INote';
-import {
-  AngularFirestore,
-  AngularFirestoreCollection,
-  DocumentReference,
-} from '@angular/fire/compat/firestore';
-import { Title } from '@angular/platform-browser';
+import { AngularFirestore, AngularFirestoreCollection, DocumentReference} from '@angular/fire/compat/firestore';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotesService {
-  private dbPath = '/notes';
   notesRef!: AngularFirestoreCollection<any>;
 
   public notes: INote[] = [];
-  constructor(private db: AngularFirestore) {
-    this.notesRef = db.collection(this.dbPath);
+  constructor(private db: AngularFirestore, private lgs: LoginService) {
+    this.notesRef = db.collection(this.lgs.user.id);
 
     //Cargar todas las notas del servidor
     this.notesRef.get().subscribe((d) => {
