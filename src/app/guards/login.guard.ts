@@ -1,21 +1,28 @@
+import { SocialUser } from '@abacritt/angularx-social-login';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { LocalstorageService } from '../services/localstorage.service';
 import { LoginService } from '../services/login.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginGuard implements CanActivate {
-  constructor(private router:Router,private loginS:LoginService){}
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  constructor(private router:Router,private loginS:LoginService,private localS: LocalstorageService){}
+  canActivate(route: ActivatedRouteSnapshot, 
+              state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       //emulating a loggin system -> fake data
-      let mockLogin = this.loginS.isAuth();
+      let login = false; //this.loginS.isAuth();
+      let user:SocialUser = JSON.parse(this.localS.get('user')); 
+      if(user!=null){
+        this.loginS.user = user;
+        this.loginS.refreshToken();
+        login=true;
+      }
 
       let result=false;
-      if(!mockLogin){
+      if(!login){
         //Not Logged
         if(route.url[0].toString()!='login'){
           //you're not logged?, ---> not alowed --> go login
