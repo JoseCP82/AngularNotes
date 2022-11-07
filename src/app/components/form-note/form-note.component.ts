@@ -47,7 +47,7 @@ export class FormNoteComponent implements OnInit {
     let newNote:INote = {
       id:this.form.value.id,// <<-- new
       title: this.form.value.title,
-      description: this.form.value.description
+      description: this.form.value.description,
     }
     this.onsubmit.emit(newNote);
     this.form.reset();

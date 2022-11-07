@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
+import { ThemesService } from 'src/app/services/themes.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,14 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(public loginS:LoginService, public localS:LocalstorageService) { }
+  
+  constructor(public loginS:LoginService, public localS:LocalstorageService, private themesS:ThemesService) {}
 
   ngOnInit(): void {
+  }
+
+  public onSetTheme(e: string) {
+    this.themesS.onSetTheme(e);
   }
 
   public logout(){

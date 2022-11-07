@@ -1,11 +1,14 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, Input, HostListener } from '@angular/core';
+import { LocalstorageService } from '../services/localstorage.service';
 @Directive({
   standalone: true,
   selector: '[appHighlight]',
 })
 export class HighlightDirective {
   @Input() appHighlight!: any;
+
   constructor(private el: ElementRef) {}
+
   //añado control de eventos sobre los elementos que
   //se les aplique la directiva
   @HostListener('mouseenter') onMouseEnter() {

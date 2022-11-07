@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { LocalstorageService } from './services/localstorage.service';
-import { LoginService } from './services/login.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +6,7 @@ import { LoginService } from './services/login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularNotes';
-
-  private user!: string;
+  title = 'AngularNotes'; 
 
   constructor() {}
 }

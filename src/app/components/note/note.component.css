@@ -1,10 +1,11 @@
 ul {
-    margin: 10px 20px 0px 30px;
-    /*margin: 0px 20px;*/
+    margin:auto;
+    padding: 0px;
     list-style: none;
+    width: 95%;
 }
 
 li {
-    padding-left: 0px;
-    text-align: start;
+    padding: 5px;
+    align-items: center;
 }

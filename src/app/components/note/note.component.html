@@ -1,8 +1,9 @@
+
 <ul class="list-group list-group-horizontal" class="row align-items-start">
   <li class="list-group-item" class="col" class=" col-12 col-md-5">{{ note.title }}</li>
   <li class="list-group-item" class="col" class="col-12 col-md-5">{{ note.description }}</li>
   <li class="list-group-item" class="col" class="col-12 col-md-1">
-    <button type="button" class="btn btn-outline-danger" (click)="removeNoteFn()">
+    <button type="button" class="btn btn-outline-danger removeButton" (click)="removeNoteFn()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -19,7 +20,7 @@
     </button>
   </li>
   <li class="list-group-item" class="col" class="col-12 col-md-1">
-    <button type="button" class="btn btn-primary" (click)="editNoteFn()">
+    <button type="button" class="btn btn-outline-primary editButton" (click)="editNoteFn()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -35,4 +36,5 @@
       Editar
     </button>
   </li>
+  <hr>
 </ul>

@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <ul class="list-group list-group-horizontal" class="row align-items-start">
+    <ul class="list-group list-group-horizontal" id="headList" class="row align-items-start">
       <li class="list-group-item" class="col" class=" col-12 col-md-5">TÍTULO</li>
       <li class="list-group-item" class="col" class=" col-12 col-md-5">DESCRIPCIÓN</li>
       <li class="list-group-item" class="col" class=" col-12 col-md-2">ACCIONES</li>  

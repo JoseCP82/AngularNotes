@@ -1,9 +1,12 @@
 #credential_picker_container {
     display: none;
-}/* You can add global styles to this file, and also import other style files */
+}
+/* You can add global styles to this file, and also import other style files */
 asl-google-signin-button div{
     display:flex;
     flex-direction: row;
     justify-content: center;
     text-align:center;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

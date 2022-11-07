@@ -24,7 +24,7 @@ export class AboutComponent implements OnInit {
       this.mensaje = data.quote;
     })
     .catch(err => console.error(err));
-    console.log("FINAL");*/
+    console.log("FINAL");
     //fin de oninit
 
     this.http
@@ -40,7 +40,7 @@ export class AboutComponent implements OnInit {
           this.mensaje = event.body.quote;
         }
       });
-
+      */
   }
 
 }

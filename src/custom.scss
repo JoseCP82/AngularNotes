@@ -1,0 +1,95 @@
+@import "../node_modules//bootstrap/scss/functions";
+@import "../node_modules//bootstrap/scss/variables";
+@import "../node_modules//bootstrap/scss/mixins";
+.dark-theme {
+    /* redefine theme colors for dark theme */
+    $primary: #012345;
+    $secondary: #111111;
+    $success: #222222;
+    $dark: #000;
+    $danger: rgb(134, 14, 118);
+    
+    $theme-colors: (
+        "primary": $primary,
+        "secondary": $secondary,
+        "success": $success,
+        "danger": $danger,
+        "info": $indigo,
+        "dark": $dark,
+        "light": $light,
+    );
+
+    /* redefine theme color variables */
+    @each $color, $value in $theme-colors {
+        --#{$variable-prefix}#{$color}: #{$value};
+    }
+
+    /* redefine theme color rgb vars (used for bg- colors) */
+    $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+    @each $color, $value in $theme-colors-rgb {
+        --#{$variable-prefix}#{$color}-rgb: #{$value};
+    }
+
+    $body-color: rgb(255,102,203);
+    $body-bg: #0a0d10;
+    $hover-color: #430d3b;
+    $input-color: #575757;
+    
+    --#{$variable-prefix}body-color: #{$body-color};
+    --#{$variable-prefix}body-bg: #{$body-bg};
+
+    ul, nav, li, a, #spanTheme{
+        background-color: $body-bg !important;
+        color: $body-color !important;
+    }
+
+    #spanTheme:hover, #logoutHover:hover {
+        background-color: $hover-color !important;
+    }
+
+    input {
+        background-color: $input-color !important;
+        color: $body-color !important;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+
+    .navbar-toggler  {
+        border-color: rgb(255,102,203);
+      }
+    
+    .container-fluid {
+        background: #d000ff !important;
+    }
+
+    .removeButton{
+        color: $danger !important;
+        border: 1px solid $danger !important;
+    }
+
+    .removeButton:hover {
+        background-color: #d000ff !important;
+        color: rgb(0, 0, 0) !important;
+    }
+
+    .editButton {
+        color: #3676ff !important;
+        border: 1px solid #3676ff !important;
+    }
+
+    .editButton:hover {
+        background-color: #0800ff !important;
+        color: rgb(0, 0, 0) !important;
+    }
+
+    #headList li{
+        background: #4e195c !important;
+    }
+
+    .footer {
+        background: #0a0d10 !important;
+        border: 3px solid #4e195c;
+    }
+}

@@ -20,7 +20,6 @@ export class LoginService {
       if (this.loggedIn) {
         this.lss.remove('user');
         this.lss.set('user',user);
-        this.refreshToken;
         if (this.originalPath) {
           this.router.navigate([this.originalPath]);
           this.originalPath = '';

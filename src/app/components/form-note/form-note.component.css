@@ -1,0 +1,17 @@
+form {
+    width: 90%;
+    margin: auto;
+}
+
+.form-group {
+    padding-top: 20px;
+}
+
+.saveButton {
+    padding: 10px;
+}
+
+button:hover {
+    background: rgb(0, 177, 68);
+    border-color: rgb(0, 177, 68);
+}
