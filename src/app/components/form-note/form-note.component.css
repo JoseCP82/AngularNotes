@@ -9,9 +9,18 @@ form {
 
 .saveButton {
     padding: 10px;
+    text-align: center;
 }
 
 button:hover {
     background: rgb(0, 177, 68);
     border-color: rgb(0, 177, 68);
+}
+
+button {
+    border-radius: 120%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bold;
 }

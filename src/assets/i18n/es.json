@@ -17,5 +17,11 @@
     "Oscuro": "Oscuro",
     "TituloMayus":"TÍTULO",
     "DescripcionMayus":"DESCRIPCIÓN",
-    "Acciones": "ACCIONES"
+    "Acciones": "ACCIONES",
+    "SobreMi":"Sobre mí...",
+    "SobreMiTexto":"Hola, mi nombre es José Mª Cámara y soy estudiante en 2º curso de Formación Profesional de Grado Superior en Desarrollo de Aplicaciones Informáticas. Me apasiona el mundo de la tecnología, informática y música!",
+    "MisProyectos":"Mis proyectos...",
+    "MisProyectosTexto":"Haz click sobre la imagen para visitar mi GitHub y ver todo el código de éste proyecto y algunos más... Estoy muy ilusionado por ello!!! Nos vemos en los siguientes proyectos!!!",
+    "Angular":"Angular...",
+    "AngularTexto":"Éste proyecto ha sido desarrollado bajo el FrameWork Angular, Firebase y Bootstrap. Visita sus sitios oficiales para ver toda la documentación."
 }
