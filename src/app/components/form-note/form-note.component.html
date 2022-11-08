@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col" class="col-12 col-md-4">
       <div class="form-group" >
-        <input #title type="text" class="form-control" formControlName="title" placeholder="Título" />
+        <input #title type="text" class="form-control" formControlName="title" [placeholder]="'Titulo' | translate" />
       </div>
     </div>
     <div class="col" class="col-12 col-md-8">
       <div class="form-group">
-        <input type="text" class="form-control" formControlName="description" placeholder="Descripción" />
+        <input type="text" class="form-control" formControlName="description" [placeholder]="'Descripcion' | translate" />
       </div>
     </div>
     <div class="saveButton">
-      <button type="submit" class="btn btn-primary" [disabled]="this.form.status!='VALID'" >Guardar</button>
+      <button type="submit" class="btn btn-primary" [disabled]="this.form.status!='VALID'" >{{"Guardar" | translate}}</button>
     </div>
   </div>
 </form>

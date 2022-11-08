@@ -2,12 +2,13 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild }
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { INote } from 'src/app/model/INote';
-import { ToastrService } from 'ngx-toastr';
+import { MessagesService } from 'src/app/services/messages.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form-note',
   standalone: true,
-  imports: [CommonModule,ReactiveFormsModule],
+  imports: [CommonModule,ReactiveFormsModule,TranslateModule],
   templateUrl: './form-note.component.html',
   styleUrls: ['./form-note.component.css']
 })
@@ -19,7 +20,7 @@ export class FormNoteComponent implements OnInit {
   @ViewChild('title') title!:ElementRef;
   public description!:string;
   */
-  constructor(private fb:FormBuilder, private toastr: ToastrService) {
+  constructor(private fb:FormBuilder, private messageS:MessagesService) {
     this.form = this.fb.group({
       title: ['',[Validators.required,Validators.minLength(4)]],
       description:[''],
@@ -52,10 +53,6 @@ export class FormNoteComponent implements OnInit {
     }
     this.onsubmit.emit(newNote);
     this.form.reset();
-    this.showSuccess();
-  }
-
-  showSuccess(){
-    this.toastr.success('Nota agregada!');
+    this.messageS.showSuccess('Nota almacenada!');
   }
 }

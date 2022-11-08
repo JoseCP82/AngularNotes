@@ -90,6 +90,20 @@
 
     .footer {
         background: #0a0d10 !important;
-        border: 3px solid #4e195c;
+        border: 3px solid #4e195c !important;
+    }
+
+    .footer a:hover {
+        color: #0a0d10 !important;    
+        background-color: #d000ff !important;
+    }
+
+    .header {
+        background: #0a0d10 !important;
+        border: 3px solid #4e195c !important;
+    }
+
+    .header span {
+        color: #d000ff !important;
     }
 }

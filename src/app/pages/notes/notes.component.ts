@@ -7,26 +7,27 @@ import { SharedModule } from 'src/app/components/SharedModule';
 import { HighlightDirective } from 'src/app/directives/highlight.directive';
 import { FormNoteComponent } from 'src/app/components/form-note/form-note.component';
 import { HeadListComponent } from 'src/app/components/head-list/head-list.component';
-import { ToastrService } from 'ngx-toastr';
+import { MessagesService } from 'src/app/services/messages.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [CommonModule,FormsModule,SharedModule,HighlightDirective,FormNoteComponent, HeadListComponent],
+  imports: [CommonModule,FormsModule,SharedModule,HighlightDirective,FormNoteComponent, HeadListComponent, TranslateModule],
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css'],
 })
 export class NotesComponent implements OnInit {
   public _editingNote!:INote;
 
-  constructor(public notesS: NotesService, private toastr:ToastrService) {}
+  constructor(public notesS: NotesService, private messageS:MessagesService) {}
 
   ngOnInit(): void {}
   
   public removingNote($event: INote) {
     console.log('Elminando Nota');
     this.notesS.removeNote($event.id);
-    this.showSuccess('Nota eliminada!');
+    this.messageS.showSuccess('Nota eliminada!');
   }
   public editingNote($event: INote) {
     console.log("Editando Nota");
@@ -42,10 +43,8 @@ export class NotesComponent implements OnInit {
     console.log($event);
     this.notesS.updateNote($event);  //<-new
     document.getElementById("closeModal")?.click();
-    this.showSuccess('Nota actualizada!');
+    this.messageS.showSuccess('Nota actualizada!');
   }
 
-  showSuccess(message:string){
-    this.toastr.success(message);
-  }
+  
 }

@@ -16,21 +16,15 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" aria-current="page" routerLink="/"
-            >Inicio</a
+            >{{"Inicio" | translate}}</a
           >
-          <a class="nav-link" routerLink="/new">Nueva nota</a>
-          <a class="nav-link" routerLink="/about">Acerca de</a>
+          <a class="nav-link" routerLink="/new">{{"Nueva nota" | translate}}</a>
+          <a class="nav-link" routerLink="/about">{{"Acerca de" | translate}}</a>
           <li class="nav-item dropdown" *ngIf="this.loginS.user">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Cuenta
+            <a class="nav-link dropdown-toggle" href="#" role="button" 
+            data-bs-toggle="dropdown" aria-expanded="false">{{"Cerrar sesion" | translate}}
             </a>
-            <ul class="dropdown-menu">
+            <ul id="dropMenu" class="dropdown-menu">
               <li>
                 <span style="padding: 10px">{{ this.loginS.user!.name }}</span>
               </li>
@@ -44,8 +38,7 @@
                   class="dropdown-item"
                   href="#"
                   (click)="logout()"
-                >
-                  Logout
+                >{{"Cerrar sesion" | translate}}
                 </a>
               </li>
             </ul>
@@ -57,21 +50,17 @@
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            >
-              Apariencia
-            </a>
+            >{{"Tema" | translate}}</a>
             <ul class="dropdown-menu">
               <li>
                 <span
                   id="spanTheme"
                   class="dropdown-item"
                   (click)="onSetTheme('light-theme')"
-                >
-                  Light
-                </span>
+                >{{"Claro" | translate}}</span>
               </li>
               <li>
-                <span id="spanTheme" class="dropdown-item" (click)="onSetTheme('dark-theme')" > Dark </span>
+                <span id="spanTheme" class="dropdown-item" (click)="onSetTheme('dark-theme')" >{{"Oscuro" | translate}}</span>
               </li>
             </ul>
           </li>

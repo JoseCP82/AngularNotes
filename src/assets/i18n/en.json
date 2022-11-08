@@ -1,0 +1,21 @@
+{
+    "Descripcion":"Description",
+    "Titulo":"Title",
+    "Editar":"Edit",
+    "Cerrar sesion":"Logout",
+    "Nueva nota":"New note",
+    "Inicio":"Home",
+    "Notas":"Notes",
+    "Guardar":"Save",
+    "Acerca de": "About",
+    "Eliminar": "Delete",
+    "Cuenta": "Account",
+    "EditarNota": "Edit note",
+    "Cerrar": "Close",
+    "Tema": "Theme",
+    "Claro": "Light",
+    "Oscuro": "Dark",
+    "TituloMayus":"TITLE",
+    "DescripcionMayus":"DESCRIPTION",
+    "Acciones": "ACCION"
+}
