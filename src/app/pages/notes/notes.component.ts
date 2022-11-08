@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/components/SharedModule';
 import { HighlightDirective } from 'src/app/directives/highlight.directive';
 import { FormNoteComponent } from 'src/app/components/form-note/form-note.component';
 import { HeadListComponent } from 'src/app/components/head-list/head-list.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-notes',
@@ -18,19 +19,21 @@ import { HeadListComponent } from 'src/app/components/head-list/head-list.compon
 export class NotesComponent implements OnInit {
   public _editingNote!:INote;
 
-  constructor(public notesS: NotesService) {}
+  constructor(public notesS: NotesService, private toastr:ToastrService) {}
 
   ngOnInit(): void {}
   
   public removingNote($event: INote) {
     console.log('Elminando Nota');
     this.notesS.removeNote($event.id);
+    this.showSuccess('Nota eliminada!');
   }
   public editingNote($event: INote) {
     console.log("Editando Nota");
     this._editingNote=$event;
     console.log(this._editingNote)
     document.getElementById("launchModal")?.click();
+   
   }
   trackByNotes(index: number, item: INote) {
     return item.id;
@@ -39,5 +42,10 @@ export class NotesComponent implements OnInit {
     console.log($event);
     this.notesS.updateNote($event);  //<-new
     document.getElementById("closeModal")?.click();
+    this.showSuccess('Nota actualizada!');
+  }
+
+  showSuccess(message:string){
+    this.toastr.success(message);
   }
 }

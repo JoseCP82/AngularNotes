@@ -1,11 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <div class="row">
-    <div class="col col-4">
+    <div class="col" class="col-12 col-md-4">
       <div class="form-group" >
         <input #title type="text" class="form-control" formControlName="title" placeholder="Título" />
       </div>
     </div>
-    <div class="col col-8">
+    <div class="col" class="col-12 col-md-8">
       <div class="form-group">
         <input type="text" class="form-control" formControlName="description" placeholder="Descripción" />
       </div>
