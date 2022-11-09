@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageServicesService } from './services/language-services.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'AngularNotes'; 
 
-  constructor(translate: TranslateService) {
-    translate.addLangs(['es','en']);
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('es');
-
-     // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use('es');
+  constructor(private langS:LanguageServicesService, translate:TranslateService) {
+    this.langS.add(['es','en']);
+    let language=this.langS.get();
+    if(language) {
+      this.langS.setDefault('es');
+      this.langS.use(language);
+    }
+    else {
+      this.langS.setDefault('es');
+    }
   }
 }

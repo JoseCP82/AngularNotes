@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
 
   public logout(){
     this.localS.remove("user");
+    this.localS.remove("language");
     this.loginS.signOut();
   }
 
